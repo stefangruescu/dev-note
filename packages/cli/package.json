@@ -1,0 +1,26 @@
+{
+  "name": "devs-note",
+  "version": "4.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": "dist/index.js",
+  "scripts": {
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+  },
+  "dependencies": {
+    "@dev-note/local-client": "^4.0.0"
+  },
+  "devDependencies": {
+    "@dev-note/local-api": "^4.0.0",
+    "@types/node": "^14.14.33",
+    "commander": "^7.1.0",
+    "esbuild": "0.8.26",
+    "typescript": "^4.2.3"
+  },
+  "gitHead": "dd33966f4cf0d45afd88a959ae3ae2d67d7b8e24"
+}
